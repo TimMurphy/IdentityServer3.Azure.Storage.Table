@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using IdentityServer3.Azure.Storage.Table.Infrastructure.Serializers;
 using IdentityServer3.Azure.Storage.Table.Specifications.Helpers;
 using IdentityServer3.Azure.Storage.Table.Specifications.Helpers.Models;
-using IdentityServer3.Azure.Storage.Table.Stores;
 using IdentityServer3.Core.Models;
 using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;

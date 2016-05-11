@@ -10,7 +10,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Helpers
         public DummyFactory()
         {
             ValueFactories.Add(typeof(ScopeType), () => Enum.Parse(typeof(ScopeType), typeof(ScopeType).GetEnumNames().RandomItem()));
-            ValueFactories.Add(typeof(DateTimeOffset?),() => DummyNullableDateTimeOffset());
+            ValueFactories.Add(typeof(DateTimeOffset?), () => DummyNullableDateTimeOffset());
         }
 
         private static DateTimeOffset? DummyNullableDateTimeOffset()

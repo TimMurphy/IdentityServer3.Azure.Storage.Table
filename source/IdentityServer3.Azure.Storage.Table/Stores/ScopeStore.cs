@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer3.Azure.Storage.Table.Infrastructure.Serializers;
 using IdentityServer3.Core.Models;
 using IdentityServer3.Core.Services;
-using Microsoft.WindowsAzure.Storage.Table;
 using OpenMagic.Azure.Storage.Table;
 
 namespace IdentityServer3.Azure.Storage.Table.Stores
@@ -18,15 +16,11 @@ namespace IdentityServer3.Azure.Storage.Table.Stores
     {
         private readonly ITable<Scope> _table;
 
-        public ScopeStore() : base()
-        {
-        }
-
         /// <summary>
         ///     Initializes a new instance of the <see cref="ScopeStore" /> class.
         /// </summary>
         /// <param name="table">
-        ///     The Azure Storage Table that stores <see cref="Scope" />Scopres.
+        ///     The Azure Storage Table that stores <see cref="Scope">Scopes</see>.
         /// </param>
         public ScopeStore(ITable<Scope> table)
         {

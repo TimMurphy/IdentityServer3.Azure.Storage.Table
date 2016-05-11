@@ -2,17 +2,14 @@
 using System.Threading.Tasks;
 using IdentityServer3.Core.Models;
 using IdentityServer3.Core.Services;
-using Microsoft.WindowsAzure.Storage.Table;
 
 namespace IdentityServer3.Azure.Storage.Table.Services
 {
     public class UserService : IUserService
     {
-        private readonly CloudTable _table;
-
-        public UserService(CloudTable table)
+        public UserService()
         {
-            _table = table;
+            throw new NotImplementedException("todo");
         }
 
         public Task PreAuthenticateAsync(PreAuthenticationContext context)

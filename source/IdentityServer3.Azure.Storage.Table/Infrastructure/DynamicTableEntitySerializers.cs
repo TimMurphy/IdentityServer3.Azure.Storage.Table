@@ -2,7 +2,7 @@
 using IdentityServer3.Core.Models;
 using OpenMagic.Azure.Storage.Table;
 
-namespace IdentityServer3.Azure.Storage.Table.Infrastructure.Serializers
+namespace IdentityServer3.Azure.Storage.Table.Infrastructure
 {
     [SuppressMessage("ReSharper", "ArgumentsStyleAnonymousFunction")]
     [SuppressMessage("ReSharper", "ArgumentsStyleOther")]

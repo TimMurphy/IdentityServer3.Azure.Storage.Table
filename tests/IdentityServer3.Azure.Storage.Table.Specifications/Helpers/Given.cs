@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using IdentityServer3.Azure.Storage.Table.Infrastructure;
+using IdentityServer3.Azure.Storage.Table.Stores;
 using IdentityServer3.Core.Models;
 using Microsoft.WindowsAzure.Storage.Table;
+using OpenMagic.Azure.Storage.Table;
 
 namespace IdentityServer3.Azure.Storage.Table.Specifications.Helpers
 {
@@ -11,5 +14,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Helpers
         public CloudTable ScopesTable { get; set; }
         public Scope Scope { get; set; }
         public DynamicTableEntity DynamicTableEntity { get; set; }
+        public string[] ScopeNames { get; set; }
+        public ScopeStore ScopeStore => new ScopeStore(new Table<Scope>(AzureTableProvider.ConnectionString, ScopesTable.Name, DynamicTableEntitySerializers.ScopeSerializer));
     }
 }

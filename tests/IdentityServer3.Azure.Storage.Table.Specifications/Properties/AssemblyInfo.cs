@@ -3,6 +3,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Anotar.LibLog;
+using Xunit;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -41,3 +42,7 @@ using Anotar.LibLog;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: LogMinimalMessage]
+
+// todo: enable parallel tests. requires each test has unique table name but even then maybe Azure Storage emulator can't handle it
+
+[assembly: CollectionBehavior(DisableTestParallelization = true)]

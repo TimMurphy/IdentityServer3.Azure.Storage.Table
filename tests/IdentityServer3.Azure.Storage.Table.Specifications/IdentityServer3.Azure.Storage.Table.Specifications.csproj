@@ -155,6 +155,7 @@
     <Compile Include="Helpers\Actual.cs" />
     <Compile Include="Helpers\DummyFactory.cs" />
     <Compile Include="Steps\ScopeStore\CommonSteps.cs" />
+    <Compile Include="Steps\ScopeStore\FindScopesAsyncSteps.cs" />
     <Compile Include="Steps\ScopeStore\GetScopesAsyncSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\Models\GivenScope.cs" />

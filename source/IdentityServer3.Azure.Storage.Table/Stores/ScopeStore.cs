@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer3.Core.Models;
 using IdentityServer3.Core.Services;
+using NullGuard;
 using OpenMagic.Azure.Storage.Table;
+using OpenMagic.Extensions.Collections.Generic;
 
 namespace IdentityServer3.Azure.Storage.Table.Stores
 {
@@ -36,9 +37,9 @@ namespace IdentityServer3.Azure.Storage.Table.Stores
         /// <returns>
         ///     List of scopes in the store that exist in <paramref name="scopeNames" />.
         /// </returns>
-        public Task<IEnumerable<Scope>> FindScopesAsync(IEnumerable<string> scopeNames)
+        public Task<IEnumerable<Scope>> FindScopesAsync([AllowNull] IEnumerable<string> scopeNames)
         {
-            throw new NotImplementedException("todo");
+            return FindScopesAsync(scopeNames?.ToArray() ?? new string[] {});
         }
 
         /// <summary>
@@ -62,6 +63,16 @@ namespace IdentityServer3.Azure.Storage.Table.Stores
             }
 
             return scopes;
+        }
+
+        private async Task<IEnumerable<Scope>> FindScopesAsync(string[] scopeNames)
+        {
+            // todo: Improve ITable<TEntity>.GetAllAsync() to accept where clause
+            var scopes = await GetScopesAsync( /*publicOnly*/ false);
+
+            return scopeNames.IsNullOrEmpty() ?
+                scopes :
+                scopes.Where(scope => scopeNames.Contains(scope.Name));
         }
     }
 }

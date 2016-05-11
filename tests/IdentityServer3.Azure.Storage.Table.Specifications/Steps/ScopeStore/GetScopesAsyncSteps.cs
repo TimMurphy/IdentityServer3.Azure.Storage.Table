@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using IdentityServer3.Azure.Storage.Table.Infrastructure.Serializers;
 using IdentityServer3.Azure.Storage.Table.Specifications.Helpers;
 using IdentityServer3.Azure.Storage.Table.Specifications.Helpers.Models;
 using IdentityServer3.Core.Models;
@@ -61,9 +60,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.ScopeStore
         [When(@"ScopeStore\.GetScopesAsync\(\<publicOnly\>\) is called")]
         public void WhenScopeStore_GetScopesAsyncIsCalled()
         {
-            var scopeStore = new Stores.ScopeStore(new Table<Scope>(AzureTableProvider.ConnectionString, _given.ScopesTable.Name, DynamicTableEntitySerializers.ScopeSerializer));
-
-            _actual.Scopes = scopeStore.GetScopesAsync(_given.PublicOnly).Result.ToArray();
+            _actual.Scopes = _given.ScopeStore.GetScopesAsync(_given.PublicOnly).Result.ToArray();
         }
 
         [Then(@"the result should scopes:")]

@@ -124,10 +124,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
+    <Compile Include="Features\ClientStore\ClientStore.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientStore.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DynamicTableEntitySerializers\DynamicTableEntitySerializers.feature.cs">
+      <DependentUpon>DynamicTableEntitySerializers.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Features\ScopeStore\GetScopesAsync.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GetScopesAsync.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ScopeStore\FindScopesAsync.feature.cs">
+      <DependentUpon>FindScopesAsync.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\UserService\UserService.feature.cs">
+      <DependentUpon>UserService.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Helpers\AzureStorageEmulator.cs" />
     <Compile Include="Helpers\AzureTableNamer.cs" />
@@ -147,9 +167,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Features\ClientStore\ClientStore.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ClientStore.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DynamicTableEntitySerializers\DynamicTableEntitySerializers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DynamicTableEntitySerializers.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\ScopeStore\GetScopesAsync.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetScopesAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ScopeStore\FindScopesAsync.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FindScopesAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UserService\UserService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserService.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

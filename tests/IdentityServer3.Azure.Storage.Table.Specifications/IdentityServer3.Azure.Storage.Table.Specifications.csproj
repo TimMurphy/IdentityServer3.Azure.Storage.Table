@@ -124,10 +124,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
-    <Compile Include="Features\ClientStore\ClientStore.feature.cs">
+    <Compile Include="Features\ClientStore\FindClientByIdAsync.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ClientStore.feature</DependentUpon>
+      <DependentUpon>FindClientByIdAsync.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\DynamicTableEntitySerializers\DynamicTableEntitySerializers.feature.cs">
       <DependentUpon>DynamicTableEntitySerializers.feature</DependentUpon>
@@ -154,7 +154,9 @@
     <Compile Include="Helpers\AzureTableStorage.cs" />
     <Compile Include="Helpers\Actual.cs" />
     <Compile Include="Helpers\DummyFactory.cs" />
-    <Compile Include="Steps\ScopeStore\CommonSteps.cs" />
+    <Compile Include="Helpers\Models\GivenClient.cs" />
+    <Compile Include="Steps\ClientStore\FindClientByIdAsyncSteps.cs" />
+    <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Steps\ScopeStore\FindScopesAsyncSteps.cs" />
     <Compile Include="Steps\ScopeStore\GetScopesAsyncSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,9 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Features\ClientStore\ClientStore.feature">
+    <None Include="Features\ClientStore\FindClientByIdAsync.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ClientStore.feature.cs</LastGenOutput>
+      <LastGenOutput>FindClientByIdAsync.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\DynamicTableEntitySerializers\DynamicTableEntitySerializers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

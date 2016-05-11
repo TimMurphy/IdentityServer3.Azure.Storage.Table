@@ -16,5 +16,9 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Helpers
         public DynamicTableEntity DynamicTableEntity { get; set; }
         public string[] ScopeNames { get; set; }
         public ScopeStore ScopeStore => new ScopeStore(new Table<Scope>(AzureTableProvider.ConnectionString, ScopesTable.Name, DynamicTableEntitySerializers.ScopeSerializer));
+        public ClientStore ClientStore => new ClientStore(new Table<Client>(AzureTableProvider.ConnectionString, ClientsTable.Name, DynamicTableEntitySerializers.ClientSerializer));
+        public IEnumerable<Client> Clients { get; set; }
+        public CloudTable ClientsTable { get; set; }
+        public string ClientId { get; set; }
     }
 }

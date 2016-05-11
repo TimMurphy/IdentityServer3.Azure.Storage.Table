@@ -13,5 +13,11 @@ namespace IdentityServer3.Azure.Storage.Table.Infrastructure
             partitionKeyFactory: scope => scope.Name,
             rowKeyFactory: scope => string.Empty,
             ignoreProperties: new[] {nameof(Scope.Name)});
+
+        public static DynamicTableEntitySerializer<Client> ClientSerializer => new DynamicTableEntitySerializer<Client>(
+            entityFactory: (partitionKey, rowKey) => new Client {ClientId = partitionKey},
+            partitionKeyFactory: scope => scope.ClientId,
+            rowKeyFactory: scope => string.Empty,
+            ignoreProperties: new[] {nameof(Scope.Name)});
     }
 }

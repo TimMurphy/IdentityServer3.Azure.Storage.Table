@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 
-namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.ScopeStore
+namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps
 {
     [Binding]
     public class CommonSteps

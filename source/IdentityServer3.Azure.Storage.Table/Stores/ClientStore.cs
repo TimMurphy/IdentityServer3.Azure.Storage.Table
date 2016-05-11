@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Anotar.LibLog;
+using EmptyStringGuard;
 using IdentityServer3.Core.Models;
 using IdentityServer3.Core.Services;
 using NullGuard;
@@ -18,17 +19,29 @@ namespace IdentityServer3.Azure.Storage.Table.Stores
         }
 
         [return: AllowNull]
-        public async Task<Client> FindClientByIdAsync(string clientId)
+        public async Task<Client> FindClientByIdAsync([AllowNull, AllowEmpty] string clientId)
         {
+            if (string.IsNullOrWhiteSpace(clientId))
+            {
+                return null;
+            }
+
             var clients = await _table.FindByPartitionKeyAsync(clientId);
             var client = clients.SingleOrDefault();
 
             if (client == null)
             {
                 LogTo.Warn($"Cannot find {nameof(clientId)} '{clientId}'.");
+                return null;
             }
 
-            return client;
+            if (client.Enabled)
+            {
+                return client;
+            }
+
+            LogTo.Warn($"{nameof(clientId)} '{clientId}' is disabled.");
+            return null;
         }
     }
 }

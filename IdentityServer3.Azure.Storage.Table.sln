@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer3.Azure.Storage.Table", "source\IdentityServer3.Azure.Storage.Table\IdentityServer3.Azure.Storage.Table.csproj", "{08D744C6-282C-4589-A65B-6A2B4B713C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer3.Azure.Storage.Table.Specifications", "tests\IdentityServer3.Azure.Storage.Table.Specifications\IdentityServer3.Azure.Storage.Table.Specifications.csproj", "{FA1A613C-F029-411E-9D07-9F8579166C55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08D744C6-282C-4589-A65B-6A2B4B713C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D744C6-282C-4589-A65B-6A2B4B713C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D744C6-282C-4589-A65B-6A2B4B713C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D744C6-282C-4589-A65B-6A2B4B713C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1A613C-F029-411E-9D07-9F8579166C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1A613C-F029-411E-9D07-9F8579166C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1A613C-F029-411E-9D07-9F8579166C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1A613C-F029-411E-9D07-9F8579166C55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

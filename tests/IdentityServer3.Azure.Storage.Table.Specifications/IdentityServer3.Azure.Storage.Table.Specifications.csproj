@@ -144,8 +144,28 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Features\UserService\UserService.feature.cs">
-      <DependentUpon>UserService.feature</DependentUpon>
+    <Compile Include="Features\UserService\AuthenticateLocalAsync.feature.cs">
+      <DependentUpon>AuthenticateLocalAsync.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\UserService\AuthenticateExternalAsync.feature.cs">
+      <DependentUpon>AuthenticateExternalAsync.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\UserService\GetProfileDataAsync.feature.cs">
+      <DependentUpon>GetProfileDataAsync.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\UserService\IsActiveAsync.feature.cs">
+      <DependentUpon>IsActiveAsync.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\UserService\GetDisplayName.feature.cs">
+      <DependentUpon>GetDisplayName.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -186,9 +206,25 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FindScopesAsync.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\UserService\UserService.feature">
+    <None Include="Features\UserService\AuthenticateLocalAsync.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UserService.feature.cs</LastGenOutput>
+      <LastGenOutput>AuthenticateLocalAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UserService\AuthenticateExternalAsync.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateExternalAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UserService\GetProfileDataAsync.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetProfileDataAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UserService\IsActiveAsync.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>IsActiveAsync.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UserService\GetDisplayName.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetDisplayName.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

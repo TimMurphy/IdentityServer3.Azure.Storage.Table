@@ -20,27 +20,6 @@ namespace IdentityServer3.Azure.Storage.Table.Services
     public class UserService : UserServiceBase
     {
         /// <summary>
-        ///     This methods gets called for local authentication (whenever 
-        ///     the user uses the username and password dialog).
-        /// </summary>
-        public override Task AuthenticateLocalAsync(LocalAuthenticationContext context)
-        {
-            //var query =
-            //    from u in _users
-            //    where u.Username == context.UserName && u.Password == context.Password
-            //    select u;
-
-            //var user = query.SingleOrDefault();
-            //if (user != null)
-            //{
-            //    context.AuthenticateResult = new AuthenticateResult(user.Subject, GetDisplayName(user));
-            //}
-
-            //return Task.FromResult(0);
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         ///     This method gets called when the user uses an external identity 
         ///     provider to authenticate.
         /// </summary>
@@ -80,6 +59,27 @@ namespace IdentityServer3.Azure.Storage.Table.Services
             //}
 
             //context.AuthenticateResult = new AuthenticateResult(user.Subject, GetDisplayName(user), identityProvider: context.ExternalIdentity.Provider);
+
+            //return Task.FromResult(0);
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///     This methods gets called for local authentication (whenever 
+        ///     the user uses the username and password dialog).
+        /// </summary>
+        public override Task AuthenticateLocalAsync(LocalAuthenticationContext context)
+        {
+            //var query =
+            //    from u in _users
+            //    where u.Username == context.UserName && u.Password == context.Password
+            //    select u;
+
+            //var user = query.SingleOrDefault();
+            //if (user != null)
+            //{
+            //    context.AuthenticateResult = new AuthenticateResult(user.Subject, GetDisplayName(user));
+            //}
 
             //return Task.FromResult(0);
             throw new NotImplementedException();

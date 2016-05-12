@@ -78,8 +78,8 @@
       <HintPath>..\..\packages\OpenMagic.2.0.0\lib\net45\OpenMagic.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="OpenMagic.Azure.Storage.Table, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OpenMagic.Azure.Storage.Table.0.10.0\lib\net461\OpenMagic.Azure.Storage.Table.dll</HintPath>
+    <Reference Include="OpenMagic.Azure.Storage.Table, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenMagic.Azure.Storage.Table.0.11.0\lib\net461\OpenMagic.Azure.Storage.Table.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -106,7 +106,9 @@
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Stores\ClientStore.cs" />
     <Compile Include="Infrastructure\DynamicTableEntitySerializers.cs" />
+    <Compile Include="Stores\IUserStore.cs" />
     <Compile Include="Stores\ScopeStore.cs" />
+    <Compile Include="Stores\UserStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

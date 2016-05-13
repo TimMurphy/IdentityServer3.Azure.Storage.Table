@@ -170,11 +170,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Features\UserService\GetDisplayName.feature.cs">
-      <DependentUpon>GetDisplayName.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Helpers\AzureStorageEmulator.cs" />
     <Compile Include="Helpers\AzureTableNamer.cs" />
     <Compile Include="Helpers\AzureTableStorage.cs" />
@@ -228,10 +223,6 @@
     <None Include="Features\UserService\IsActiveAsync.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>IsActiveAsync.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\UserService\GetDisplayName.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GetDisplayName.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

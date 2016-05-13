@@ -48,6 +48,9 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.UserService
 
             A.CallTo(() => _given.UserStore.FindByExternalIdentityAsync(A<ExternalIdentity>.Ignored))
                 .ReturnsLazily((ExternalIdentity externalIdentity) => _given.Users.SingleOrDefault(u => u.ExternalIdentity.Provider == externalIdentity.Provider && u.ExternalIdentity.ProviderId == externalIdentity.ProviderId));
+
+            A.CallTo(() => _given.UserStore.FindByCredentialsAsync(A<string>.Ignored, A<string>.Ignored))
+                .ReturnsLazily((string userName, string password) => _given.Users.SingleOrDefault(u => u.UserName == userName && u.Password == password));
         }
 
         [Given(@"Provider is '(.*)'")]

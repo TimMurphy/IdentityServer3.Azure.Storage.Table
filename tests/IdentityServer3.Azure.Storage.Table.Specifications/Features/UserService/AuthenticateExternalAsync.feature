@@ -2,8 +2,8 @@
 
 Background: 
 	Given user table has users:
-        | Subject                              | Provider         | ProviderId       | Username          |
-        | 661ac23d-45f0-463b-a1d0-760544209131 | Dummy Provider 1 | DummyProviderId1 | Dummy User Name 1 |
+        | Subject                              | Provider         | ProviderId       | UserName          | Password         |
+        | 661ac23d-45f0-463b-a1d0-760544209131 | Dummy Provider 1 | DummyProviderId1 | Dummy User Name 1 | Dummy Password 1 |
 
 Scenario: Existing external user
     Given Subject is '661ac23d-45f0-463b-a1d0-760544209131'

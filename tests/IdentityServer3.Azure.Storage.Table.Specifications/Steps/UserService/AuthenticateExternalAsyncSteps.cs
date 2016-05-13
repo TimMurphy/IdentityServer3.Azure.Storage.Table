@@ -40,6 +40,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.UserService
                     },
                     Subject = givenUser.Subject,
                     UserName = givenUser.UserName,
+                    Password = givenUser.Password
                 })
                 .ToArray();
 

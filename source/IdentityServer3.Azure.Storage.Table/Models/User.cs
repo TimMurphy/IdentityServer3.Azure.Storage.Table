@@ -9,15 +9,21 @@ namespace IdentityServer3.Azure.Storage.Table.Models
 {
     public class User
     {
-        public string Subject { get; private set; }
-        public string Username { get; private set; }
-        public string Provider { get; private set; }
-        public string ProviderId { get; private set; }
-        public bool Enabled { get; private set; }
-        public IEnumerable<Claim> Claims { get; private set; }
+        public User()
+        {
+            Claims = new List<Claim>();
+            Enabled = true;
+        }
+
+        public string Subject { get; set; }
+        public string Username { get; set; }
+        public bool Enabled { get; set; }
+        public IEnumerable<Claim> Claims { get; set; }
+        public ExternalIdentity ExternalIdentity { get; set; }
 
         public string GetDisplayName()
         {
+            // todo: specification
             var nameClaim = Claims.FirstOrDefault(x => x.Type == Constants.ClaimTypes.Name);
 
             return nameClaim == null ? Username : nameClaim.Value;
@@ -25,27 +31,17 @@ namespace IdentityServer3.Azure.Storage.Table.Models
 
         public static User FromExternalIdentity(ExternalIdentity externalIdentity)
         {
-            //string displayName;
+            // todo: specification
+            var name = externalIdentity.Claims.FirstOrDefault(x => x.Type == Constants.ClaimTypes.Name);
+            var displayName = name == null ? externalIdentity.ProviderId : name.Value;
 
-            //var name = context.ExternalIdentity.Claims.FirstOrDefault(x => x.Type == Constants.ClaimTypes.Name);
-            //if (name == null)
-            //{
-            //    displayName = context.ExternalIdentity.ProviderId;
-            //}
-            //else
-            //{
-            //    displayName = name.Value;
-            //}
-
-            //user = new User
-            //{
-            //    Subject = CryptoRandom.CreateUniqueId(),
-            //    Provider = context.ExternalIdentity.Provider,
-            //    ProviderId = context.ExternalIdentity.ProviderId,
-            //    Username = displayName,
-            //    Claims = context.ExternalIdentity.Claims
-            //};
-            throw new NotImplementedException();
+            return new User
+            {
+                Subject = Guid.NewGuid().ToString(),
+                ExternalIdentity = externalIdentity,
+                Username = displayName,
+                Claims = externalIdentity.Claims
+            };
         }
     }
 }

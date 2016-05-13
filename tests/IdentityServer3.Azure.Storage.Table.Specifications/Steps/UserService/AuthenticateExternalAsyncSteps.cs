@@ -39,7 +39,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.UserService
                         ProviderId = givenUser.ProviderId
                     },
                     Subject = givenUser.Subject,
-                    Username = givenUser.Username
+                    UserName = givenUser.UserName,
                 })
                 .ToArray();
 
@@ -67,10 +67,10 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.UserService
             _given.Subject = subject;
         }
 
-        [Given(@"Username is '(.*)'")]
-        public void GivenUsernameIs(string username)
+        [Given(@"UserName is '(.*)'")]
+        public void GivenUserNameIs(string userName)
         {
-            _given.Username = username;
+            _given.UserName = userName;
         }
 
         [When(@"UserService\.AuthenticateExternalAsync\(context\) is called")]
@@ -84,7 +84,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.UserService
                     ProviderId = _given.ProviderId,
                     Claims = new List<Claim>
                     {
-                        new Claim(Constants.ClaimTypes.Name, _given.Username)
+                        new Claim(Constants.ClaimTypes.Name, _given.UserName)
                     }
                 }
             };
@@ -98,7 +98,7 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Steps.UserService
         public void ThenContext_AuthenticateResultShouldBeSetWithUserDetails()
         {
             var actual = _given.ExternalAuthenticationContext.AuthenticateResult;
-            var expected = new AuthenticateResult(_given.Subject, _given.Username, identityProvider: _given.Provider);
+            var expected = new AuthenticateResult(_given.Subject, _given.UserName, identityProvider: _given.Provider);
 
             actual.ShouldBeEquivalentTo(expected, AssertionConfiguration());
         }

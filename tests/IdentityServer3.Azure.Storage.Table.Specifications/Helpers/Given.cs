@@ -27,6 +27,6 @@ namespace IdentityServer3.Azure.Storage.Table.Specifications.Helpers
         public string ProviderId { get; set; }
         public ExternalAuthenticationContext ExternalAuthenticationContext { get; internal set; }
         public string Subject { get; set; }
-        public string Username { get; set; }
+        public string UserName { get; set; }
     }
 }

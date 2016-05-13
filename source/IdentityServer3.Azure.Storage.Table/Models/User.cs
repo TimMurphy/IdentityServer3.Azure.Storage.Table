@@ -16,7 +16,8 @@ namespace IdentityServer3.Azure.Storage.Table.Models
         }
 
         public string Subject { get; set; }
-        public string Username { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
         public bool Enabled { get; set; }
         public IEnumerable<Claim> Claims { get; set; }
         public ExternalIdentity ExternalIdentity { get; set; }
@@ -26,7 +27,7 @@ namespace IdentityServer3.Azure.Storage.Table.Models
             // todo: specification
             var nameClaim = Claims.FirstOrDefault(x => x.Type == Constants.ClaimTypes.Name);
 
-            return nameClaim == null ? Username : nameClaim.Value;
+            return nameClaim == null ? UserName : nameClaim.Value;
         }
 
         public static User FromExternalIdentity(ExternalIdentity externalIdentity)
@@ -39,7 +40,7 @@ namespace IdentityServer3.Azure.Storage.Table.Models
             {
                 Subject = Guid.NewGuid().ToString(),
                 ExternalIdentity = externalIdentity,
-                Username = displayName,
+                UserName = displayName,
                 Claims = externalIdentity.Claims
             };
         }

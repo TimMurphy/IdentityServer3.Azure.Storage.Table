@@ -48,7 +48,7 @@ namespace IdentityServer3.Azure.Storage.Table.Services
 
         /// <summary>
         ///     This methods gets called for local authentication (whenever
-        ///     the user uses the username and password dialog).
+        ///     the user uses the userName and password dialog).
         /// </summary>
         public override async Task AuthenticateLocalAsync(LocalAuthenticationContext context)
         {
